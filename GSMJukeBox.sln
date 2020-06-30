@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSMJukeBox", "GSMJukeBox\GSMJukeBox.csproj", "{3FD5D873-2753-4479-B9CE-5841202810E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FD5D873-2753-4479-B9CE-5841202810E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD5D873-2753-4479-B9CE-5841202810E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD5D873-2753-4479-B9CE-5841202810E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD5D873-2753-4479-B9CE-5841202810E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4D57934-2FF1-4F2D-BA1B-84DBB9E27C01}
+	EndGlobalSection
+EndGlobal
