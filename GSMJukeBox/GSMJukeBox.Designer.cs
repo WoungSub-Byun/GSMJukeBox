@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRegister = new MetroFramework.Controls.MetroButton();
-            this.btnSet = new MetroFramework.Controls.MetroButton();
+            this.btnGoSongRegisterForm = new MetroFramework.Controls.MetroButton();
+            this.btnGoSettingForm = new MetroFramework.Controls.MetroButton();
+            this.btnGoRegisterForm = new MetroFramework.Controls.MetroButton();
             this.btnGoLoginForm = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // btnRegister
+            // btnGoSongRegisterForm
             // 
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnRegister.Location = new System.Drawing.Point(485, 186);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(93, 90);
-            this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "노래 신청";
-            this.btnRegister.UseSelectable = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnGoSongRegisterForm.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnGoSongRegisterForm.Location = new System.Drawing.Point(445, 186);
+            this.btnGoSongRegisterForm.Name = "btnGoSongRegisterForm";
+            this.btnGoSongRegisterForm.Size = new System.Drawing.Size(93, 90);
+            this.btnGoSongRegisterForm.TabIndex = 0;
+            this.btnGoSongRegisterForm.Text = "노래 신청";
+            this.btnGoSongRegisterForm.UseSelectable = true;
+            this.btnGoSongRegisterForm.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // btnSet
+            // btnGoSettingForm
             // 
-            this.btnSet.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnSet.Location = new System.Drawing.Point(239, 186);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(93, 90);
-            this.btnSet.TabIndex = 1;
-            this.btnSet.Text = "예약 시간 설정";
-            this.btnSet.UseSelectable = true;
+            this.btnGoSettingForm.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnGoSettingForm.Location = new System.Drawing.Point(219, 186);
+            this.btnGoSettingForm.Name = "btnGoSettingForm";
+            this.btnGoSettingForm.Size = new System.Drawing.Size(93, 90);
+            this.btnGoSettingForm.TabIndex = 1;
+            this.btnGoSettingForm.Text = "예약 시간 설정";
+            this.btnGoSettingForm.UseSelectable = true;
+            // 
+            // btnGoRegisterForm
+            // 
+            this.btnGoRegisterForm.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnGoRegisterForm.Location = new System.Drawing.Point(637, 378);
+            this.btnGoRegisterForm.Name = "btnGoRegisterForm";
+            this.btnGoRegisterForm.Size = new System.Drawing.Size(78, 29);
+            this.btnGoRegisterForm.TabIndex = 2;
+            this.btnGoRegisterForm.Text = "회원가입";
+            this.btnGoRegisterForm.UseSelectable = true;
             // 
             // btnGoLoginForm
             // 
             this.btnGoLoginForm.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnGoLoginForm.Location = new System.Drawing.Point(637, 378);
+            this.btnGoLoginForm.Location = new System.Drawing.Point(536, 378);
             this.btnGoLoginForm.Name = "btnGoLoginForm";
-            this.btnGoLoginForm.Size = new System.Drawing.Size(78, 29);
-            this.btnGoLoginForm.TabIndex = 2;
-            this.btnGoLoginForm.Text = "회원가입";
+            this.btnGoLoginForm.Size = new System.Drawing.Size(71, 29);
+            this.btnGoLoginForm.TabIndex = 3;
+            this.btnGoLoginForm.Text = "로그인";
             this.btnGoLoginForm.UseSelectable = true;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.metroButton1.Location = new System.Drawing.Point(536, 378);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(71, 29);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "로그인";
-            this.metroButton1.UseSelectable = true;
             // 
             // GSMJukeBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 430);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnGoLoginForm);
-            this.Controls.Add(this.btnSet);
-            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnGoRegisterForm);
+            this.Controls.Add(this.btnGoSettingForm);
+            this.Controls.Add(this.btnGoSongRegisterForm);
             this.Name = "GSMJukeBox";
             this.Text = "GSMJukeBox";
             this.Load += new System.EventHandler(this.GSMJukeBox_Load);
@@ -93,9 +93,9 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton btnRegister;
-        private MetroFramework.Controls.MetroButton btnSet;
+        private MetroFramework.Controls.MetroButton btnGoSongRegisterForm;
+        private MetroFramework.Controls.MetroButton btnGoSettingForm;
+        private MetroFramework.Controls.MetroButton btnGoRegisterForm;
         private MetroFramework.Controls.MetroButton btnGoLoginForm;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

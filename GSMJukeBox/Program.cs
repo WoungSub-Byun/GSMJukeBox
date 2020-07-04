@@ -16,7 +16,7 @@ namespace GSMJukeBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GSMJukeBox());
+            Application.Run(new Setting());
         }
     }
 }

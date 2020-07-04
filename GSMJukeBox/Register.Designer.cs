@@ -39,8 +39,9 @@
             this.TextBox_id = new MetroFramework.Controls.MetroTextBox();
             this.TextBox_Pwd = new MetroFramework.Controls.MetroTextBox();
             this.TextBox_checkPwd = new MetroFramework.Controls.MetroTextBox();
-            this.Button_Register = new MetroFramework.Controls.MetroButton();
-            this.Button_checkId = new MetroFramework.Controls.MetroButton();
+            this.btnRegister = new MetroFramework.Controls.MetroButton();
+            this.btnCheckId = new MetroFramework.Controls.MetroButton();
+            this.btnGoMainForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelName
@@ -104,7 +105,7 @@
             this.TextBox_Name.CustomButton.Image = null;
             this.TextBox_Name.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.TextBox_Name.CustomButton.Name = "";
-            this.TextBox_Name.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TextBox_Name.CustomButton.Size = new System.Drawing.Size(21, 16);
             this.TextBox_Name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_Name.CustomButton.TabIndex = 1;
             this.TextBox_Name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -136,7 +137,7 @@
             this.TextBox_Number.CustomButton.Image = null;
             this.TextBox_Number.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.TextBox_Number.CustomButton.Name = "";
-            this.TextBox_Number.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TextBox_Number.CustomButton.Size = new System.Drawing.Size(21, 16);
             this.TextBox_Number.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_Number.CustomButton.TabIndex = 1;
             this.TextBox_Number.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -168,7 +169,7 @@
             this.TextBox_id.CustomButton.Image = null;
             this.TextBox_id.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.TextBox_id.CustomButton.Name = "";
-            this.TextBox_id.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TextBox_id.CustomButton.Size = new System.Drawing.Size(21, 16);
             this.TextBox_id.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_id.CustomButton.TabIndex = 1;
             this.TextBox_id.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -200,7 +201,7 @@
             this.TextBox_Pwd.CustomButton.Image = null;
             this.TextBox_Pwd.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.TextBox_Pwd.CustomButton.Name = "";
-            this.TextBox_Pwd.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TextBox_Pwd.CustomButton.Size = new System.Drawing.Size(21, 16);
             this.TextBox_Pwd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_Pwd.CustomButton.TabIndex = 1;
             this.TextBox_Pwd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -232,7 +233,7 @@
             this.TextBox_checkPwd.CustomButton.Image = null;
             this.TextBox_checkPwd.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.TextBox_checkPwd.CustomButton.Name = "";
-            this.TextBox_checkPwd.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TextBox_checkPwd.CustomButton.Size = new System.Drawing.Size(21, 16);
             this.TextBox_checkPwd.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_checkPwd.CustomButton.TabIndex = 1;
             this.TextBox_checkPwd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -256,31 +257,42 @@
             this.TextBox_checkPwd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBox_checkPwd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // Button_Register
+            // btnRegister
             // 
-            this.Button_Register.Location = new System.Drawing.Point(375, 357);
-            this.Button_Register.Name = "Button_Register";
-            this.Button_Register.Size = new System.Drawing.Size(108, 48);
-            this.Button_Register.TabIndex = 11;
-            this.Button_Register.Text = "확인";
-            this.Button_Register.UseSelectable = true;
+            this.btnRegister.Location = new System.Drawing.Point(375, 357);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(108, 48);
+            this.btnRegister.TabIndex = 11;
+            this.btnRegister.Text = "확인";
+            this.btnRegister.UseSelectable = true;
             // 
-            // Button_checkId
+            // btnCheckId
             // 
-            this.Button_checkId.Location = new System.Drawing.Point(249, 239);
-            this.Button_checkId.Name = "Button_checkId";
-            this.Button_checkId.Size = new System.Drawing.Size(60, 21);
-            this.Button_checkId.TabIndex = 12;
-            this.Button_checkId.Text = "중복확인";
-            this.Button_checkId.UseSelectable = true;
+            this.btnCheckId.Location = new System.Drawing.Point(249, 239);
+            this.btnCheckId.Name = "btnCheckId";
+            this.btnCheckId.Size = new System.Drawing.Size(60, 21);
+            this.btnCheckId.TabIndex = 12;
+            this.btnCheckId.Text = "중복확인";
+            this.btnCheckId.UseSelectable = true;
+            // 
+            // btnGoMainForm
+            // 
+            this.btnGoMainForm.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoMainForm.Location = new System.Drawing.Point(509, 22);
+            this.btnGoMainForm.Name = "btnGoMainForm";
+            this.btnGoMainForm.Size = new System.Drawing.Size(75, 45);
+            this.btnGoMainForm.TabIndex = 13;
+            this.btnGoMainForm.Text = "메인으로";
+            this.btnGoMainForm.UseVisualStyleBackColor = true;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 460);
-            this.Controls.Add(this.Button_checkId);
-            this.Controls.Add(this.Button_Register);
+            this.Controls.Add(this.btnGoMainForm);
+            this.Controls.Add(this.btnCheckId);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.TextBox_checkPwd);
             this.Controls.Add(this.TextBox_Pwd);
             this.Controls.Add(this.TextBox_id);
@@ -312,7 +324,8 @@
         private MetroFramework.Controls.MetroTextBox TextBox_id;
         private MetroFramework.Controls.MetroTextBox TextBox_Pwd;
         private MetroFramework.Controls.MetroTextBox TextBox_checkPwd;
-        private MetroFramework.Controls.MetroButton Button_Register;
-        private MetroFramework.Controls.MetroButton Button_checkId;
+        private MetroFramework.Controls.MetroButton btnRegister;
+        private MetroFramework.Controls.MetroButton btnCheckId;
+        private System.Windows.Forms.Button btnGoMainForm;
     }
 }

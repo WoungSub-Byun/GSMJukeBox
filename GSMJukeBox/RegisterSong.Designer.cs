@@ -31,10 +31,13 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.UrlBox = new MetroFramework.Controls.MetroTextBox();
             this.SongTitleBox = new MetroFramework.Controls.MetroTextBox();
-            this.urllabel = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.Button_Register = new MetroFramework.Controls.MetroButton();
+            this.btnSongRegister = new MetroFramework.Controls.MetroButton();
+            this.btnGoMainForm = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -62,7 +65,7 @@
             this.UrlBox.CustomButton.Visible = false;
             this.UrlBox.Lines = new string[] {
         "URL을 입력하세요."};
-            this.UrlBox.Location = new System.Drawing.Point(560, 116);
+            this.UrlBox.Location = new System.Drawing.Point(24, 34);
             this.UrlBox.MaxLength = 32767;
             this.UrlBox.Name = "UrlBox";
             this.UrlBox.PasswordChar = '\0';
@@ -94,7 +97,7 @@
             this.SongTitleBox.CustomButton.Visible = false;
             this.SongTitleBox.Lines = new string[] {
         "노래 제목을 입력하세요"};
-            this.SongTitleBox.Location = new System.Drawing.Point(560, 212);
+            this.SongTitleBox.Location = new System.Drawing.Point(24, 28);
             this.SongTitleBox.MaxLength = 32767;
             this.SongTitleBox.Name = "SongTitleBox";
             this.SongTitleBox.PasswordChar = '\0';
@@ -110,50 +113,64 @@
             this.SongTitleBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.SongTitleBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // urllabel
+            // btnSongRegister
             // 
-            this.urllabel.AutoSize = true;
-            this.urllabel.Location = new System.Drawing.Point(560, 85);
-            this.urllabel.Name = "urllabel";
-            this.urllabel.Size = new System.Drawing.Size(42, 19);
-            this.urllabel.TabIndex = 3;
-            this.urllabel.Text = "- URL";
+            this.btnSongRegister.Location = new System.Drawing.Point(603, 319);
+            this.btnSongRegister.Name = "btnSongRegister";
+            this.btnSongRegister.Size = new System.Drawing.Size(101, 43);
+            this.btnSongRegister.TabIndex = 5;
+            this.btnSongRegister.Text = "신청하기";
+            this.btnSongRegister.UseSelectable = true;
             // 
-            // metroLabel2
+            // btnGoMainForm
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(560, 177);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(75, 19);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "- 노래제목";
+            this.btnGoMainForm.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoMainForm.Location = new System.Drawing.Point(691, 22);
+            this.btnGoMainForm.Name = "btnGoMainForm";
+            this.btnGoMainForm.Size = new System.Drawing.Size(75, 45);
+            this.btnGoMainForm.TabIndex = 6;
+            this.btnGoMainForm.Text = "메인으로";
+            this.btnGoMainForm.UseVisualStyleBackColor = true;
             // 
-            // Button_Register
+            // groupBox1
             // 
-            this.Button_Register.Location = new System.Drawing.Point(603, 319);
-            this.Button_Register.Name = "Button_Register";
-            this.Button_Register.Size = new System.Drawing.Size(101, 43);
-            this.Button_Register.TabIndex = 5;
-            this.Button_Register.Text = "신청하기";
-            this.Button_Register.UseSelectable = true;
+            this.groupBox1.Controls.Add(this.UrlBox);
+            this.groupBox1.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(537, 73);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(228, 104);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "URL";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.SongTitleBox);
+            this.groupBox2.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Location = new System.Drawing.Point(537, 198);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(229, 90);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "노래제목";
             // 
             // RegisterSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Button_Register);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.urllabel);
-            this.Controls.Add(this.SongTitleBox);
-            this.Controls.Add(this.UrlBox);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnGoMainForm);
+            this.Controls.Add(this.btnSongRegister);
             this.Controls.Add(this.dataGridView);
             this.Name = "RegisterSong";
             this.Text = "RegisterSong";
             this.Load += new System.EventHandler(this.RegisterSong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -162,8 +179,9 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private MetroFramework.Controls.MetroTextBox UrlBox;
         private MetroFramework.Controls.MetroTextBox SongTitleBox;
-        private MetroFramework.Controls.MetroLabel urllabel;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroButton Button_Register;
+        private MetroFramework.Controls.MetroButton btnSongRegister;
+        private System.Windows.Forms.Button btnGoMainForm;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

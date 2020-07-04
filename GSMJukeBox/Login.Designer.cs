@@ -30,9 +30,10 @@
         {
             this.idlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.TextBoxId = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxPassword = new MetroFramework.Controls.MetroTextBox();
+            this.btnGoMainForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // idlabel
@@ -53,14 +54,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "비밀번호";
             // 
-            // metroButton1
+            // btnLogin
             // 
-            this.metroButton1.Location = new System.Drawing.Point(309, 89);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(70, 70);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "로그인";
-            this.metroButton1.UseSelectable = true;
+            this.btnLogin.Location = new System.Drawing.Point(309, 89);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(70, 70);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "로그인";
+            this.btnLogin.UseSelectable = true;
             // 
             // TextBoxId
             // 
@@ -126,14 +127,25 @@
             this.TextBoxPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // btnGoMainForm
+            // 
+            this.btnGoMainForm.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoMainForm.Location = new System.Drawing.Point(371, 18);
+            this.btnGoMainForm.Name = "btnGoMainForm";
+            this.btnGoMainForm.Size = new System.Drawing.Size(75, 45);
+            this.btnGoMainForm.TabIndex = 7;
+            this.btnGoMainForm.Text = "메인으로";
+            this.btnGoMainForm.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 251);
+            this.Controls.Add(this.btnGoMainForm);
             this.Controls.Add(this.TextBoxPassword);
             this.Controls.Add(this.TextBoxId);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.idlabel);
             this.Name = "Login";
@@ -147,8 +159,9 @@
 
         private System.Windows.Forms.Label idlabel;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnLogin;
         private MetroFramework.Controls.MetroTextBox TextBoxId;
         private MetroFramework.Controls.MetroTextBox TextBoxPassword;
+        private System.Windows.Forms.Button btnGoMainForm;
     }
 }
