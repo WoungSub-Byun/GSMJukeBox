@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,20 +10,21 @@ using System.Windows.Forms;
 
 namespace GSMJukeBox
 {
-    public partial class RegisterSong : MetroFramework.Forms.MetroForm
+    public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
-        public RegisterSong()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private SqlConnection sqlconn = null;
-        private string constr = "SERVER=127.0.0.1; DATABASE=JukeBox;UID=woung;PASSWORD='1234'";
+        private void btnGoMainForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        private void RegisterSong_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             
         }
-
     }
 }

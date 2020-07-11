@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace GSMJukeBox
 {
-    public partial class Setting :  MetroFramework.Forms.MetroForm
+    public partial class SetTimeForm :  MetroFramework.Forms.MetroForm
     {
-        public Setting()
+        public SetTimeForm()
         {
             InitializeComponent();
         }
-
     }
 }

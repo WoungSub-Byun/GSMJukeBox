@@ -17,16 +17,18 @@ namespace GSMJukeBox
             InitializeComponent();
         }
 
-        private void GSMJukeBox_Load(object sender, EventArgs e)
+        private void btnLoginForm_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void btnSignUpForm_Click(object sender, EventArgs e)
         {
-            RegisterSong registerForm = new RegisterSong();
-            registerForm.ShowDialog();
-            this.Close();
+            this.Visible = false;
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.ShowDialog();
         }
     }
 }
