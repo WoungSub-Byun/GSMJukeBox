@@ -16,5 +16,13 @@ namespace GSMJukeBox
         {
             InitializeComponent();
         }
+
+        private void btnGoMainForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMainForm adminMainForm = new AdminMainForm();
+            adminMainForm.ShowDialog();
+            this.Close();
+        }
     }
 }

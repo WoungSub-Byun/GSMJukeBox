@@ -123,13 +123,12 @@
             this.TextBox_Pwd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_Pwd.CustomButton.UseSelectable = true;
             this.TextBox_Pwd.CustomButton.Visible = false;
-            this.TextBox_Pwd.Lines = new string[] {
-        "비밀번호 입력"};
+            this.TextBox_Pwd.Lines = new string[0];
             this.TextBox_Pwd.Location = new System.Drawing.Point(167, 204);
             this.TextBox_Pwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBox_Pwd.MaxLength = 32767;
             this.TextBox_Pwd.Name = "TextBox_Pwd";
-            this.TextBox_Pwd.PasswordChar = '\0';
+            this.TextBox_Pwd.PasswordChar = '●';
             this.TextBox_Pwd.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TextBox_Pwd.SelectedText = "";
             this.TextBox_Pwd.SelectionLength = 0;
@@ -137,7 +136,6 @@
             this.TextBox_Pwd.ShortcutsEnabled = true;
             this.TextBox_Pwd.Size = new System.Drawing.Size(136, 31);
             this.TextBox_Pwd.TabIndex = 4;
-            this.TextBox_Pwd.Text = "비밀번호 입력";
             this.TextBox_Pwd.UseSelectable = true;
             this.TextBox_Pwd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBox_Pwd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -176,6 +174,7 @@
             this.radioButton_Student.TabStop = true;
             this.radioButton_Student.Text = "학생";
             this.radioButton_Student.UseVisualStyleBackColor = true;
+            this.radioButton_Student.CheckedChanged += new System.EventHandler(this.radioButton_Student_CheckedChanged);
             // 
             // radioButton_Admin
             // 
@@ -189,6 +188,7 @@
             this.radioButton_Admin.TabStop = true;
             this.radioButton_Admin.Text = "사감";
             this.radioButton_Admin.UseVisualStyleBackColor = true;
+            this.radioButton_Admin.CheckedChanged += new System.EventHandler(this.radioButton_Admin_CheckedChanged);
             // 
             // TextBox_SndPwd
             // 
@@ -205,13 +205,12 @@
             this.TextBox_SndPwd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_SndPwd.CustomButton.UseSelectable = true;
             this.TextBox_SndPwd.CustomButton.Visible = false;
-            this.TextBox_SndPwd.Lines = new string[] {
-        "2차비밀번호 입력"};
+            this.TextBox_SndPwd.Lines = new string[0];
             this.TextBox_SndPwd.Location = new System.Drawing.Point(167, 247);
             this.TextBox_SndPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBox_SndPwd.MaxLength = 32767;
             this.TextBox_SndPwd.Name = "TextBox_SndPwd";
-            this.TextBox_SndPwd.PasswordChar = '\0';
+            this.TextBox_SndPwd.PasswordChar = '●';
             this.TextBox_SndPwd.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TextBox_SndPwd.SelectedText = "";
             this.TextBox_SndPwd.SelectionLength = 0;
@@ -219,7 +218,6 @@
             this.TextBox_SndPwd.ShortcutsEnabled = true;
             this.TextBox_SndPwd.Size = new System.Drawing.Size(136, 31);
             this.TextBox_SndPwd.TabIndex = 13;
-            this.TextBox_SndPwd.Text = "2차비밀번호 입력";
             this.TextBox_SndPwd.UseSelectable = true;
             this.TextBox_SndPwd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBox_SndPwd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -272,6 +270,7 @@
             this.Name = "LoginForm";
             this.Padding = new System.Windows.Forms.Padding(20, 80, 20, 27);
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

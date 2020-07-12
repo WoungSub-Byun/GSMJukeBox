@@ -13,8 +13,6 @@ namespace GSMJukeBox
 {
     public partial class SignUpForm : MetroFramework.Forms.MetroForm
     {
-        private SqlConnection sqlconn = null;
-        private string constr = "SERVER=127.0.0.1; DATABASE=gsmjukebox;UID=woung;PASSWORD='1234'";
         public SignUpForm()
         {
             InitializeComponent();
@@ -22,66 +20,66 @@ namespace GSMJukeBox
 
         private void SignUp_Load(object sender, EventArgs e)
         {
-            try
-            {
-                sqlconn = new SqlConnection(constr);
-                sqlconn.Open();
-
-                MessageBox.Show("connection success");
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error: " + err);
-            }
+            
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-
-            
-                /*using (SqlConnection conn = new SqlConnection(constr))
-                {
-                    conn.Open();
-                    string sql = $"insert into Users (id,number,name,pwd) values ({id},{number},{name},{pwd})";
-                    // Sql 새연결정보 생성
-                    SqlCommand sqlComm = new SqlCommand();
-                    sqlComm.CommandText = sql;
-                    sqlComm.ExecuteNonQuery();
-                }*/
-            
-        }
-
-        private void btnCheckId_Click(object sender, EventArgs e)
-        {
-            
-            /*using (SqlConnection conn = new SqlConnection(constr))
+            try
             {
-                conn.Open();
-                string sql = $"SELECT * FROM BOOKS WHERE id={id}";
-                SqlCommand sqlComm = new SqlCommand();
-                sqlComm.Connection = conn;
-                sqlComm.CommandText = sql;
-                conn.Open();
-                using (SqlDataReader SqlRs = sqlComm.ExecuteReader())
+                int number = int.Parse(comboBox_Grade.SelectedItem.ToString() 
+                    + comboBox_Class.SelectedItem.ToString() 
+                    + comboBox_Num.SelectedItem.ToString());
+
+                string name = TextBox_Name.Text;
+                string pwd = TextBox_Pwd.Text;
+                string checkPwd = TextBox_checkPwd.Text;
+                if(pwd == checkPwd)
                 {
-                    while (SqlRs.Read())
+                    string constr = "SERVER=127.0.0.1; DATABASE=gsmjukebox;UID=woung;PASSWORD='1234'";
+                    using (SqlConnection sqlconn = new SqlConnection(constr))
                     {
-                        if (SqlRs == null)
+                        try
                         {
-                            MessageBox.Show("사용가능한 아이디입니다.");
-                            checkId = true;
+                            sqlconn.Open();
+
+                            string sql = $"insert into Users(number, name, pwd) values ({number},'{name}','{pwd}')";
+                            SqlCommand command = new SqlCommand();
+                            command.Connection = sqlconn;
+                            command.CommandText = sql;
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("회원가입에 성공했습니다");
+                            this.Hide();
+                            GSMJukeBox gSMJukeBox = new GSMJukeBox();
+                            gSMJukeBox.ShowDialog();
+                            this.Close();
+
                         }
-                        else
+                        catch (Exception err)
                         {
-                            MessageBox.Show("이미 존재하는 아이디입니다.");
+                            MessageBox.Show("Error:" + err);
                         }
+                        
                     }
                 }
-            }*/
+                else { 
+                    MessageBox.Show("비밀번호가 틀립니다."); 
+                }
+                
+            } catch(Exception err)
+            {
+                MessageBox.Show("학번을 숫자로 입력해주세요");
+            }
+           
+
         }
 
         private void btnGoMainForm_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            GSMJukeBox gSMJukeBox = new GSMJukeBox();
+            gSMJukeBox.ShowDialog();
             this.Close();
         }
     }

@@ -32,7 +32,7 @@
             this.TextBox_Url = new MetroFramework.Controls.MetroTextBox();
             this.TextBox_Title = new MetroFramework.Controls.MetroTextBox();
             this.btnRegister = new MetroFramework.Controls.MetroButton();
-            this.btnGoMainForm = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -124,16 +124,18 @@
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "신청하기";
             this.btnRegister.UseSelectable = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // btnGoMainForm
+            // btnLogout
             // 
-            this.btnGoMainForm.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnGoMainForm.Location = new System.Drawing.Point(691, 22);
-            this.btnGoMainForm.Name = "btnGoMainForm";
-            this.btnGoMainForm.Size = new System.Drawing.Size(75, 45);
-            this.btnGoMainForm.TabIndex = 6;
-            this.btnGoMainForm.Text = "메인으로";
-            this.btnGoMainForm.UseVisualStyleBackColor = true;
+            this.btnLogout.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLogout.Location = new System.Drawing.Point(691, 22);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 45);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // groupBox1
             // 
@@ -183,7 +185,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnGoMainForm);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dataGridView);
             this.Name = "SongRegisterForm";
@@ -204,7 +206,7 @@
         private MetroFramework.Controls.MetroTextBox TextBox_Url;
         private MetroFramework.Controls.MetroTextBox TextBox_Title;
         private MetroFramework.Controls.MetroButton btnRegister;
-        private System.Windows.Forms.Button btnGoMainForm;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
