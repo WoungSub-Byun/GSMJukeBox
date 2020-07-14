@@ -37,6 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -51,6 +52,7 @@
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(488, 330);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // TextBox_Url
             // 
@@ -68,7 +70,7 @@
             this.TextBox_Url.CustomButton.Visible = false;
             this.TextBox_Url.Lines = new string[] {
         "URL을 입력하세요."};
-            this.TextBox_Url.Location = new System.Drawing.Point(24, 34);
+            this.TextBox_Url.Location = new System.Drawing.Point(23, 28);
             this.TextBox_Url.MaxLength = 32767;
             this.TextBox_Url.Name = "TextBox_Url";
             this.TextBox_Url.PasswordChar = '\0';
@@ -118,7 +120,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(603, 319);
+            this.btnRegister.Location = new System.Drawing.Point(538, 317);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(101, 43);
             this.btnRegister.TabIndex = 5;
@@ -141,9 +143,9 @@
             // 
             this.groupBox1.Controls.Add(this.TextBox_Url);
             this.groupBox1.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(537, 73);
+            this.groupBox1.Location = new System.Drawing.Point(538, 200);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 104);
+            this.groupBox1.Size = new System.Drawing.Size(229, 90);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "URL";
@@ -152,7 +154,7 @@
             // 
             this.groupBox2.Controls.Add(this.TextBox_Title);
             this.groupBox2.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(537, 198);
+            this.groupBox2.Location = new System.Drawing.Point(537, 86);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(229, 90);
             this.groupBox2.TabIndex = 8;
@@ -177,11 +179,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "노래 예약";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(665, 317);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(101, 43);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "삭제하기";
+            this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // SongRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -211,5 +224,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroButton btnDelete;
     }
 }

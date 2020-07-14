@@ -26,6 +26,7 @@ namespace GSMJukeBox
         {
             label3.Visible = false;
             TextBox_SndPwd.Visible = false;
+            radioButton_Student.Checked = true;
         }
 
         private void btnGoMainForm_Click(object sender, EventArgs e)

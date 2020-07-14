@@ -171,16 +171,16 @@
             "1",
             "2",
             "3"});
-            this.comboBox_Grade.Location = new System.Drawing.Point(75, 195);
+            this.comboBox_Grade.Location = new System.Drawing.Point(75, 197);
             this.comboBox_Grade.Name = "comboBox_Grade";
-            this.comboBox_Grade.Size = new System.Drawing.Size(29, 27);
+            this.comboBox_Grade.Size = new System.Drawing.Size(50, 27);
             this.comboBox_Grade.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("카카오 Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(105, 199);
+            this.label2.Location = new System.Drawing.Point(128, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 19);
             this.label2.TabIndex = 20;
@@ -190,7 +190,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("카카오 Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(229, 198);
+            this.label7.Location = new System.Drawing.Point(297, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 19);
             this.label7.TabIndex = 22;
@@ -222,16 +222,16 @@
             "19",
             "20",
             "21"});
-            this.comboBox_Num.Location = new System.Drawing.Point(192, 195);
+            this.comboBox_Num.Location = new System.Drawing.Point(244, 197);
             this.comboBox_Num.Name = "comboBox_Num";
-            this.comboBox_Num.Size = new System.Drawing.Size(35, 27);
+            this.comboBox_Num.Size = new System.Drawing.Size(50, 27);
             this.comboBox_Num.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("카카오 Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(167, 198);
+            this.label8.Location = new System.Drawing.Point(216, 200);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(22, 19);
             this.label8.TabIndex = 24;
@@ -246,9 +246,9 @@
             "2",
             "3",
             "4"});
-            this.comboBox_Class.Location = new System.Drawing.Point(137, 195);
+            this.comboBox_Class.Location = new System.Drawing.Point(163, 197);
             this.comboBox_Class.Name = "comboBox_Class";
-            this.comboBox_Class.Size = new System.Drawing.Size(29, 27);
+            this.comboBox_Class.Size = new System.Drawing.Size(50, 27);
             this.comboBox_Class.TabIndex = 23;
             // 
             // SignUpForm
