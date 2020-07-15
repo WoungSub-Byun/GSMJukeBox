@@ -14,7 +14,7 @@ namespace GSMJukeBox
     public partial class SongRegisterForm : MetroFramework.Forms.MetroForm
     {
         public int loginnedNumber;
-        string constr = "SERVER=127.0.0.1; DATABASE=gsmjukebox;UID=woung;PASSWORD='1234'";
+        string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
 
         public SongRegisterForm()
         {

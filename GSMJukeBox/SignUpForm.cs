@@ -36,7 +36,7 @@ namespace GSMJukeBox
                 string checkPwd = TextBox_checkPwd.Text;
                 if(pwd == checkPwd)
                 {
-                    string constr = "SERVER=127.0.0.1; DATABASE=gsmjukebox;UID=woung;PASSWORD='1234'";
+                    string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
                     using (SqlConnection sqlconn = new SqlConnection(constr))
                     {
                         try

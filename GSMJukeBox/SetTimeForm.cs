@@ -14,7 +14,7 @@ namespace GSMJukeBox
     public partial class SetTimeForm :  MetroFramework.Forms.MetroForm
     {
 
-        string constr = "SERVER=127.0.0.1; DATABASE=gsmjukebox;UID=woung;PASSWORD='1234'";
+        string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
 
         public SetTimeForm()
         {
