@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +15,12 @@ namespace GSMJukeBox
 {
     public partial class SongPlayForm : MetroFramework.Forms.MetroForm
     {
-<<<<<<<< HEAD:GSMJukeBox/SongPlayForm.cs
-        public SongPlayForm()
-========
-<<<<<<< Updated upstream:GSMJukeBox/Setting.cs
-        public Setting()
-=======
+
         int cnt = 0;
         DateTime dateTime = DateTime.Now;
         string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
         public SongPlayForm()
->>>>>>> Stashed changes:GSMJukeBox/SongPlayForm.cs
->>>>>>>> origin/wonjoon:GSMJukeBox/Setting.cs
+
         {
             /*IWebDriver driver = new ChromeDriver();
             

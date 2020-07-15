@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,18 +45,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("카카오 Regular", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(41, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 31);
+            this.label1.Size = new System.Drawing.Size(95, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "노래 재생";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(64, 96);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(672, 310);
+            this.webBrowser1.TabIndex = 1;
             // 
             // SongPlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel1);
             this.Name = "SongPlayForm";
             this.Text = "SogPlayForm";
@@ -69,5 +79,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
