@@ -19,16 +19,18 @@ namespace GSMJukeBox
 
         private void btnLoginForm_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
+            this.Close();
         }
 
         private void btnSignUpForm_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Hide();
             SignUpForm signUpForm = new SignUpForm();
             signUpForm.ShowDialog();
+            this.Close();
         }
     }
 }

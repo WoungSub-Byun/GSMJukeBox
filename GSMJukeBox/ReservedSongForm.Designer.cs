@@ -30,18 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox_Applicant = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox_Title = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.TextBox_Title = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TextBox_Applicant = new System.Windows.Forms.TextBox();
+            this.btnGoMainForm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,14 +63,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "예약 목록 확인";
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(482, 339);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(26, 88);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.Size = new System.Drawing.Size(488, 330);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -84,44 +86,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "조회";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox_Applicant);
-            this.groupBox2.Font = new System.Drawing.Font("카카오 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(29, 32);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 67);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "신청자";
-            // 
-            // textBox_Applicant
-            // 
-            this.textBox_Applicant.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_Applicant.Location = new System.Drawing.Point(6, 24);
-            this.textBox_Applicant.Name = "textBox_Applicant";
-            this.textBox_Applicant.Size = new System.Drawing.Size(122, 29);
-            this.textBox_Applicant.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox_Title);
-            this.groupBox3.Font = new System.Drawing.Font("카카오 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox3.Location = new System.Drawing.Point(29, 115);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(150, 67);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "신청곡";
-            // 
-            // textBox_Title
-            // 
-            this.textBox_Title.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_Title.Location = new System.Drawing.Point(6, 24);
-            this.textBox_Title.Name = "textBox_Title";
-            this.textBox_Title.Size = new System.Drawing.Size(122, 29);
-            this.textBox_Title.TabIndex = 0;
-            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(43, 211);
@@ -130,25 +94,78 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.TextBox_Title);
+            this.groupBox3.Font = new System.Drawing.Font("카카오 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Location = new System.Drawing.Point(29, 115);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(150, 67);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "신청곡";
+            // 
+            // TextBox_Title
+            // 
+            this.TextBox_Title.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TextBox_Title.Location = new System.Drawing.Point(6, 24);
+            this.TextBox_Title.Name = "TextBox_Title";
+            this.TextBox_Title.Size = new System.Drawing.Size(122, 29);
+            this.TextBox_Title.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.TextBox_Applicant);
+            this.groupBox2.Font = new System.Drawing.Font("카카오 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Location = new System.Drawing.Point(29, 32);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 67);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "신청자";
+            // 
+            // TextBox_Applicant
+            // 
+            this.TextBox_Applicant.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TextBox_Applicant.Location = new System.Drawing.Point(6, 24);
+            this.TextBox_Applicant.Name = "TextBox_Applicant";
+            this.TextBox_Applicant.Size = new System.Drawing.Size(122, 29);
+            this.TextBox_Applicant.TabIndex = 0;
+            // 
+            // btnGoMainForm
+            // 
+            this.btnGoMainForm.Font = new System.Drawing.Font("카카오 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGoMainForm.Location = new System.Drawing.Point(702, 25);
+            this.btnGoMainForm.Name = "btnGoMainForm";
+            this.btnGoMainForm.Size = new System.Drawing.Size(75, 45);
+            this.btnGoMainForm.TabIndex = 8;
+            this.btnGoMainForm.Text = "메인으로";
+            this.btnGoMainForm.UseVisualStyleBackColor = true;
+            this.btnGoMainForm.Click += new System.EventHandler(this.btnGoMainForm_Click);
             // 
             // ReservedSongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGoMainForm);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "ReservedSongForm";
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "ReservedSongForm";
+            this.Load += new System.EventHandler(this.ReservedSongForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -157,12 +174,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox_Title;
+        private System.Windows.Forms.TextBox TextBox_Title;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox_Applicant;
+        private System.Windows.Forms.TextBox TextBox_Applicant;
+        private System.Windows.Forms.Button btnGoMainForm;
     }
 }
