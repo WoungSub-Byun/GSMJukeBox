@@ -33,11 +33,6 @@ namespace GSMJukeBox
             }*/
 
             InitializeComponent();
-
-        }
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
             List<string> starttimes = getstarttime();
             List<string> endtimes = getendTime();
             int cnt = 0;
@@ -51,41 +46,55 @@ namespace GSMJukeBox
                 int endtime = endhour + endminute;
                 List<string> urls = getURL();
 
-                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute <= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute >= endtime))
+                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute >= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute <= endtime) && urls.Count != 0)
                 {
                     cnt++;
+                    var url = urls[0];
+
+                    if (url.Contains("watch?v="))
+                    {
+                        url = url.Replace("watch?v=", "embed/");
+                    }
+
+                    if (urls.Count > 1)
+                    {
+                        url = url + ";playlist=" + urls[1].Substring(urls[1].Length - 11);
+                    }
                     var embed = "<html><head>" +
                     "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                     "</head><body>" +
-                    "<iframe width=\"300\" src=\"{0}\"" +
-                    "<iframe width=\"400\" height=\"300\" src=\"{0}\"" +
-                    "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                    "<iframe width=\"400\" height=\"300\" src=\"" + url +
+                    "\"frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                     "</body></html>";
-
-                    var url = urls[0];
-
-                    this.webBrowser1.DocumentText = string.Format(embed, url);
-                    urls.Remove(urls[0]);
+                    webBrowser1.DocumentText = embed;
 
 
+                    urls.RemoveAt(0);
+                    this.webBrowser1.Stop();
                 }
+
                 if (cnt == 0 && urls.Count != 0)
                 {
-                    MessageBox.Show("예약 시간을 확인해주세요!");
+                    MessageBox.Show("예약 시간을 확인해주세요");
                     AdminMainForm admin = new AdminMainForm();
                     admin.ShowDialog();
                     this.Close();
 
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("예약 시간을 확인해주세요!");
+                MessageBox.Show("오류 발생");
                 AdminMainForm admin = new AdminMainForm();
                 admin.ShowDialog();
                 this.Close();
             }
+            
         }
+       
+
+
+
 
         public List<String> getURL() { 
      
@@ -122,7 +131,7 @@ namespace GSMJukeBox
                 SqlDataReader rdr = command.ExecuteReader();
                 while (rdr.Read())
                 {
-                    starttime.Add(rdr["starttime"] as String);
+                    starttime.Add(rdr["starttime"] as string);
 
                 }
                 rdr.Close();
@@ -153,6 +162,11 @@ namespace GSMJukeBox
 
             }
             return endtime;
+        }
+
+        private void SongPlayForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
