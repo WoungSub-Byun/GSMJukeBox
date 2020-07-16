@@ -15,8 +15,6 @@ namespace GSMJukeBox
 {
     public partial class SongPlayForm : MetroFramework.Forms.MetroForm
     {
-        int cnt = 0;
-        DateTime dateTime = DateTime.Now;
 
         string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
         public SongPlayForm()
@@ -53,7 +51,7 @@ namespace GSMJukeBox
                 int endtime = endhour + endminute;
                 List<string> urls = getURL();
 
-                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute <= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute >= endtime) || urls.Count != 0)
+                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute <= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute >= endtime))
                 {
                     cnt++;
                     var embed = "<html><head>" +
