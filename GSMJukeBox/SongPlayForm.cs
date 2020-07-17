@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Web.Helpers;
 using System.Windows.Forms;
 
 namespace GSMJukeBox
@@ -17,22 +12,12 @@ namespace GSMJukeBox
     {
 
         string constr = "SERVER=127.0.0.1,1234; DATABASE=gsmjukebox;UID=shin;PASSWORD='1234'";
+        string googleApiKey = "AIzaSyAnAKPb8ZJIkKWXzWFsyPQJz9OqzI8fNdI";
+        
         public SongPlayForm()
         {
-            /*IWebDriver driver = new ChromeDriver();
-            
-            List<String> urls = getURL();
-            for(int i = 0; i < urls.Count; i++)
-        {
-                String url = urls[i].ToString();
-                driver.Url = url;
-                driver.FindElement(By.Id("player")).Click();
-
-                Thread.Sleep(10000);
-                cnt++;
-            }*/
-
             InitializeComponent();
+            
             List<string> starttimes = getstarttime();
             List<string> endtimes = getendTime();
             int cnt = 0;
@@ -46,21 +31,19 @@ namespace GSMJukeBox
                 int endtime = endhour + endminute;
                 List<string> urls = getURL();
 
-                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute >= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute <= endtime) && urls.Count != 0)
+                while (((DateTime.Now.Hour * 100) + DateTime.Now.Minute >= starttime && (DateTime.Now.Hour * 100) + DateTime.Now.Minute <= endtime) && urls.Count != cnt)
                 {
-                    cnt++;
-                    var url = urls[0];
+                    
+                    string url = urls[cnt];
+                    string id = url.Substring(url.Length - 11);
 
                     if (url.Contains("watch?v="))
                     {
                         url = url.Replace("watch?v=", "embed/");
                     }
+                    url = url + "?amp;&autoplay=1";
 
-                    if (urls.Count > 1)
-                    {
-                        url = url + ";playlist=" + urls[1].Substring(urls[1].Length - 11);
-                    }
-                    var embed = "<html><head>" +
+                    string embed = "<html><head>" +
                     "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                     "</head><body>" +
                     "<iframe width=\"400\" height=\"300\" src=\"" + url +
@@ -68,8 +51,24 @@ namespace GSMJukeBox
                     "</body></html>";
                     webBrowser1.DocumentText = embed;
 
+                    
+                    WebClient myDownloader = new WebClient();
 
-                    urls.RemoveAt(0);
+                    myDownloader.Encoding = System.Text.Encoding.UTF8;
+
+                    string json = myDownloader.DownloadString("https://www.googleapis.com/youtube/v3/videos?" +
+                        "id=" + id +
+                        "&key=" + googleApiKey +
+                        "&part=contentDetails");
+                    dynamic dynamicObject = Json.Decode(json);
+                    string tmp = dynamicObject.items[0].contentDetails.duration;
+                    int Duration = Convert.ToInt32(System.Xml.XmlConvert.ToTimeSpan(tmp).TotalSeconds)*1000;
+                    
+                
+
+                    cnt++;
+                    Delay(Duration+2000);
+
                     this.webBrowser1.Stop();
                 }
 
@@ -84,14 +83,25 @@ namespace GSMJukeBox
             }
             catch (Exception ex)
             {
-                MessageBox.Show("오류 발생");
-                AdminMainForm admin = new AdminMainForm();
+                MessageBox.Show(ex.Message);
+                LoginForm admin = new LoginForm();
                 admin.ShowDialog();
                 this.Close();
             }
             
         }
-       
+
+        private static DateTime Delay(int MS) { 
+            DateTime ThisMoment = DateTime.Now;
+            TimeSpan duration = new TimeSpan(0, 0, 0, 0, MS);
+            DateTime AfterWards = ThisMoment.Add(duration);
+            while (AfterWards >= ThisMoment) 
+            { 
+                System.Windows.Forms.Application.DoEvents();
+                ThisMoment = DateTime.Now;
+            } 
+            return DateTime.Now; 
+        }
 
 
 
@@ -110,7 +120,7 @@ namespace GSMJukeBox
                 SqlDataReader rdr = command.ExecuteReader();
                 while (rdr.Read())
                 {
-                    arrayList.Add(rdr["songurl"] as string + "?amp;&autoplay=1");
+                    arrayList.Add(rdr["songurl"] as string);
                 }
                 rdr.Close();
 

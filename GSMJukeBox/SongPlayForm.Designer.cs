@@ -54,10 +54,10 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(64, 96);
+            this.webBrowser1.Location = new System.Drawing.Point(159, 86);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(672, 310);
+            this.webBrowser1.Size = new System.Drawing.Size(478, 342);
             this.webBrowser1.TabIndex = 1;
             // 
             // SongPlayForm
@@ -69,6 +69,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "SongPlayForm";
             this.Text = "SogPlayForm";
+            this.Load += new System.EventHandler(this.SongPlayForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
